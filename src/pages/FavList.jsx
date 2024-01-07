@@ -16,7 +16,7 @@ const FavList = () => {
   const [removeData, setRemoveData]=useState(false)
   
   const getFun = async () => {
-    let result = await fetch("http://localhost:8000/favlist");
+    let result = await fetch("https://imdb-5vvn.onrender.com/favlist");
     result = await result.json();
     setData(result);
   };

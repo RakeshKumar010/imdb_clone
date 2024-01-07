@@ -42,7 +42,7 @@ const FavListItem = ({ value, index,setRemoveData,removeData }) => {
                 onClick={async () => {
                   localStorage.removeItem(title);
                   setRemoveData(!removeData)
-                  let result = await fetch("http://localhost:8000/favmovie", {
+                  let result = await fetch("https://imdb-5vvn.onrender.com/favmovie", {
                     method: "delete", // Change method to 'delete'
                     body: JSON.stringify({
                       title: title,
