@@ -1,21 +1,24 @@
-const express = require('express')
-const app = express()
-const cors = require('cors')
-const dotenv = require('dotenv')
-app.use(cors())
-dotenv.config({path:'./config.env'})
-require('./db/conn')
-app.use(express.json())
+// Importing required modules
+const express = require('express'); // Express.js for creating the server
+const cors = require('cors'); // CORS for handling Cross-Origin Resource Sharing
+const dotenv = require('dotenv'); // dotenv for managing environment variables
 
-app.use(require('./route/route'))
-const PORT = 8000;
+// Configuring dotenv to use environment variables from 'config.env' file
+dotenv.config({ path: './config.env' });
 
+// Connecting to the database
+require('./db/conn');
 
+// Creating an Express application
+const app = express();
 
+// Applying middlewares
+app.use(cors()); // Enabling CORS
+app.use(express.json()); // Enabling parsing of JSON data
+app.use(require('./route/route')); // Using the routes defined in 'route.js'
 
-
-
-app.listen(PORT,()=>{
-    console.log('server is open at localhost:'+PORT);
-})
-
+// Setting up the server
+const PORT =8000 || process.env.PORT; // Defining the port to be used
+app.listen(PORT, () => { // Starting the server
+    console.log(`Server is running at http://localhost:${PORT}`);
+});

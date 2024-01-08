@@ -34,7 +34,8 @@ const FavList = () => {
           return <FavListItem value={value} index={index} setRemoveData={setRemoveData} removeData={removeData}/>;
         })}
       </div>
-      <nav
+      {/* pagination  */}
+      <div
         aria-label="Page navigation example"
         className="select-none absolute bottom-0"
       >
@@ -55,7 +56,7 @@ const FavList = () => {
             {pageNum}
           </li>
 
-          {indexArr.length > 9 ? (
+          {indexArr.length>=10 ? (
             <li
               onClick={() => {
                 setPageNum(pageNum + 1);
@@ -71,7 +72,7 @@ const FavList = () => {
             </li>
           )}
         </ul>
-      </nav>
+      </div>
     </div>
   );
 };
