@@ -1,5 +1,8 @@
 # IMDB Clone
 
+## Project Video
+https://github.com/RakeshKumar010/imdb_clone/assets/94664609/f569a3f7-6d72-43fb-b668-0dceddaace98
+
 ## Project Structure
 The project is divided into two main parts: the client side and the server side. 
 
