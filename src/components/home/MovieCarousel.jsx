@@ -6,7 +6,7 @@ const data =[
   "https://mir-s3-cdn-cf.behance.net/project_modules/fs/706b9474134343.5c239806af449.jpg",
   "https://cdnb.artstation.com/p/assets/images/images/026/475/643/large/spencer-owen-i-am-lisa-landscape.jpg?1588873984",
   "https://getwallpapers.com/wallpaper/full/9/e/3/1267880-download-free-movie-poster-wallpaper-2560x1920-for-1080p.jpg",
-  "https://cdn.telanganatoday.com/wp-content/uploads/2022/10/korameenu_firstlook-horizontal_01-scaled.jpg",
+  "https://live.staticflickr.com/320/19647015766_290035df2a_h.jpg",
   "https://wallpapercave.com/wp/wp1945919.jpg"
 ]
 

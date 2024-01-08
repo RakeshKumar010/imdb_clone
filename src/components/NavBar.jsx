@@ -24,7 +24,9 @@ const NavBar = () => {
         </Link>
         <div className="flex items-center lg:gap-1 gap-3">
           <MdOutlineNotes className="text-gray-500 text-2xl" />
-          <p className="font-bold text-gray-500 text-sm lg:block hidden">Menu</p>
+          <p className="font-bold text-gray-500 text-sm lg:block hidden">
+            Menu
+          </p>
           <Link to={"/"}>
             <img src={Logo} alt="..." className="w-16 h-8 lg:hidden block" />
           </Link>
@@ -41,7 +43,6 @@ const NavBar = () => {
               <select
                 onChange={(e) => {
                   setSearchFilter(e.target.value);
-                  
                 }}
                 name="search"
                 className="w-20 border-r-[1px] border-gray-400 border-0 text-black  h-full font-semibold border-transparent focus:border-transparent focus:ring-0"
@@ -57,7 +58,6 @@ const NavBar = () => {
                 </option>
               </select>
               <input
-              
                 type="text"
                 placeholder="Search IMDb"
                 className=" w-full mr-2  pl-2 placeholder:text-gray-600 placeholder:text-sm border-0  border-transparent focus:border-transparent focus:ring-0"
@@ -65,7 +65,6 @@ const NavBar = () => {
                   dispatch(hideNavFun(true));
 
                   setSerchData(e.target.value);
-                
                 }}
               />
               <IoMdSearch className="text-2xl text-gray-600 bg-white md:block hidden" />
@@ -96,12 +95,12 @@ const NavBar = () => {
           <Link className="text-gray-500 font-bold text-sm text-nowrap">
             Sign In
           </Link>
-          <select className="bg-transparent text-gray-500 font-bold text-sm w-20 border-0 lg:block hidden border-transparent focus:border-transparent focus:ring-0" >
+          <select className="bg-transparent text-gray-500 font-bold text-sm w-20 border-0 lg:block hidden border-transparent focus:border-transparent focus:ring-0">
             <option className="bg-gray-700" value="">
               EN
             </option>
 
-           <option className="bg-gray-700" value="HI">
+            <option className="bg-gray-700" value="HI">
               HI
             </option>
           </select>

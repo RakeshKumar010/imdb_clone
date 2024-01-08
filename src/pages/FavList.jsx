@@ -40,7 +40,7 @@ const FavList = () => {
         aria-label="Page navigation example"
         className="select-none absolute bottom-0"
       >
-        <ul class="inline-flex -space-x-px text-base h-10">
+        <ul className="inline-flex -space-x-px text-base h-10">
           <li
             onClick={() => {
               if(pageNum>0){
