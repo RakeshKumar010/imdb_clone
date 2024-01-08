@@ -14,9 +14,7 @@ app.post('/favmovie', async (req, res) => {
 app.put('/favmovie', async (req, res) => {
     let result = await favMovie.updateOne({_id: req.body._id}, {$set: req.body}); // Updating the movie document in the database
     res.send(result); // Sending the updated document as a response
-    console.log(result);
-    console.log(req.body._id);
-    console.log(req.body.userRating);
+  
 });
 
 // Route to delete a favorite movie

@@ -4,13 +4,15 @@ import SearchItemCard from "./SearchItemCard";
 const SearchItem = ({ serchData,searchFilter }) => {
   const [data, setData] = useState();
   const getFun = async () => {
-    const apikey = "2a978034";
+  
+    const apikey = import.meta.env.VITE_APP_OMDB_API_KEY;
+    const url = import.meta.env.VITE_APP_OMDB_API_URL;
     let result = await fetch(
-      `https://www.omdbapi.com/?s=${serchData}&apikey=${apikey}&type=${searchFilter}`
+      `${url}/?s=${serchData}&apikey=${apikey}&type=${searchFilter}`
     );
     result = await result.json();
     setData(result.Search);
-    console.log(result.Search);
+  
   };
   useEffect(() => {
     getFun();

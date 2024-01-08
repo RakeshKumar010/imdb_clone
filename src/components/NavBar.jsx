@@ -28,10 +28,8 @@ const NavBar = () => {
           <Link to={"/"}>
             <img src={Logo} alt="..." className="w-16 h-8 lg:hidden block" />
           </Link>
-          {/* +`${miniSearchBox?"hidden":"block"}` */}
         </div>
         <div className="flex gap-3 items-center ">
-          {/* <img src={Logo} alt="..." className="w-16 h-8 lg:hidden block" /> */}
           <div
             className={
               slicevalue
@@ -43,10 +41,10 @@ const NavBar = () => {
               <select
                 onChange={(e) => {
                   setSearchFilter(e.target.value);
-                  console.log(e.target.value);
+                  
                 }}
                 name="search"
-                className="w-20 border-r-[1px] border-gray-400 border-0 text-black  h-full font-semibold"
+                className="w-20 border-r-[1px] border-gray-400 border-0 text-black  h-full font-semibold border-transparent focus:border-transparent focus:ring-0"
               >
                 <option className="" value="">
                   All
@@ -59,14 +57,15 @@ const NavBar = () => {
                 </option>
               </select>
               <input
+              
                 type="text"
                 placeholder="Search IMDb"
-                className=" w-full mr-2  pl-2 placeholder:text-gray-600 placeholder:text-sm border-0 "
+                className=" w-full mr-2  pl-2 placeholder:text-gray-600 placeholder:text-sm border-0  border-transparent focus:border-transparent focus:ring-0"
                 onChange={(e) => {
                   dispatch(hideNavFun(true));
 
                   setSerchData(e.target.value);
-                  console.log(e.target.value);
+                
                 }}
               />
               <IoMdSearch className="text-2xl text-gray-600 bg-white md:block hidden" />
@@ -97,7 +96,7 @@ const NavBar = () => {
           <Link className="text-gray-500 font-bold text-sm text-nowrap">
             Sign In
           </Link>
-          <select className="bg-transparent text-gray-500 font-bold text-sm w-20 border-0 lg:block hidden ">
+          <select className="bg-transparent text-gray-500 font-bold text-sm w-20 border-0 lg:block hidden border-transparent focus:border-transparent focus:ring-0" >
             <option className="bg-gray-700" value="">
               EN
             </option>

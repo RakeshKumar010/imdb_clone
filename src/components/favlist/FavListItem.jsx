@@ -6,7 +6,7 @@ const FavListItem = ({ value, index,setRemoveData,removeData }) => {
   const { title, description, poster, rating, vote, release,_id,userRating,comment } = value;
   return (
     <div className="flex text-white flex-wrap  p-3" key={index}>
-      <img src={poster} alt={title} className=" w-full md:w-auto" />
+      <img src={poster} alt={title} className=" w-full md:w-auto rounded-md" />
       <div className="md:ml-10 md:w-[50vw] m-0 flex flex-col gap-2 ">
         <h1 className="md:text-4xl text-2xl  font-bold ">{title}</h1>
         <p className=" md:block hidden  my-3">{description}</p>
@@ -42,8 +42,9 @@ const FavListItem = ({ value, index,setRemoveData,removeData }) => {
                 onClick={async () => {
                   localStorage.removeItem(title);
                   setRemoveData(!removeData)
-                  let result = await fetch("http://localhost:8000/favmovie", {
-                    method: "delete", // Change method to 'delete'
+                  const baseUrl = import.meta.env.VITE_APP_URL;
+                  let result = await fetch(`${baseUrl}/favmovie`, {
+                    method: "delete",
                     body: JSON.stringify({
                       title: title,
                     }),

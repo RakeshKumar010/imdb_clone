@@ -5,3 +5,14 @@
 body{
     background-color: black;
 }
+#nav-input{
+    outline: none;
+
+}
+
+#nav-input:focus{
+    outline: red;
+    background-color: gray;
+border: 0;
+
+}

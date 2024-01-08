@@ -17,11 +17,9 @@ const MovieList = ({ id, index_ }) => {
 
   // Function to fetch movie data from the API
   const getAPi = async () => {
-    const api = "cee4f8df87245208291dbe3b2826fddf";
-    let result = await fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${api}&with_genres=` +
-        id
-    );
+    const api = import.meta.env.VITE_APP_TMDB_API_KEY;
+    const url = import.meta.env.VITE_APP_TMDB_API_URL;
+    let result = await fetch(`${url}?api_key=${api}&with_genres=` + id);
     result = await result.json();
     setMovieList(result.results);
   };
@@ -29,6 +27,7 @@ const MovieList = ({ id, index_ }) => {
   // Fetch movie data when the component render first time
   useEffect(() => {
     getAPi();
+  
   }, []);
 
   return (

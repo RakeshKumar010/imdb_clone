@@ -3,6 +3,8 @@ import { FaStar } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2"; // Import sweetalert2
 import { ratingFun } from "../redux/ratingSlice";
+
+// Define the Star component
 function Star({
   selected = false,
   onMouseEnter = (f) => f,
@@ -20,16 +22,18 @@ function Star({
   );
 }
 
+// Define the StarRating component
 function StarRating({ totalStars = 5, value }) {
-  const dispatch = useDispatch();
+ const dispatch = useDispatch();
   const ratingData = useSelector((state) => state.rating.value);
   const { _id, userRating, comment } = value;
   const [starsSelected, setStarsSelected] = useState(0);
   const [starsHovered, setStarsHovered] = useState(0);
-  // const [comment, setComment] = useState("");
 
+  // Define an async function to handle star click
   async function handleStarClick(index) {
     setStarsSelected(index + 1);
+    // Show a sweetalert2 prompt for the user to enter a comment
     const { value: userComment } = await Swal.fire({
       input: "textarea",
       inputLabel: "Comment",
@@ -42,8 +46,11 @@ function StarRating({ totalStars = 5, value }) {
     });
 
     if (userComment) {
-      console.log(starsSelected);
-      let result = await fetch("http://localhost:8000/favmovie", {
+     
+      const baseUrl = import.meta.env.VITE_APP_URL;
+
+      // Send a PUT request to update the favorite movie
+      let result = await fetch(`${baseUrl}/favmovie`, {
         method: "put",
         body: JSON.stringify({
           _id: _id,
@@ -55,12 +62,16 @@ function StarRating({ totalStars = 5, value }) {
         },
       });
       result = await result.json();
+
+      // Dispatch the ratingFun action to update the redux state
       dispatch(ratingFun(!ratingData));
     }
   }
 
+  // Initialize an array for the stars
   let stars = [];
   for (let i = 0; i < totalStars; i++) {
+    // Push a Star component into the array for each star
     stars.push(
       <Star
         key={i}
@@ -72,6 +83,7 @@ function StarRating({ totalStars = 5, value }) {
     );
   }
 
+  // Render the StarRating component
   return (
     <div className="text-2xl">
       <div className="flex gap-2">{stars}</div>
@@ -83,4 +95,5 @@ function StarRating({ totalStars = 5, value }) {
   );
 }
 
+// Export the StarRating component
 export default StarRating;
