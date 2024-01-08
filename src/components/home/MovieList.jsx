@@ -1,15 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
 import MovieCard from "./MovieCard";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
+
+// MovieList component that fetches and displays a list of movies
 const MovieList = ({ id, index_ }) => {
   const [movieList, setMovieList] = useState([]);
   const elementRef = useRef();
+
+  // Functions to slide the movie list left and right
   const slideLeft = (e) => {
     e.scrollLeft -= 800;
   };
   const slideRight = (e) => {
     e.scrollLeft += 800;
   };
+
+  // Function to fetch movie data from the API
   const getAPi = async () => {
     const api = "cee4f8df87245208291dbe3b2826fddf";
     let result = await fetch(
@@ -19,9 +25,12 @@ const MovieList = ({ id, index_ }) => {
     result = await result.json();
     setMovieList(result.results);
   };
+
+  // Fetch movie data when the component render first time
   useEffect(() => {
     getAPi();
   }, []);
+
   return (
     <div>
       <FaAngleLeft

@@ -16,7 +16,7 @@ const FavList = () => {
   const [removeData, setRemoveData]=useState(false)
   
   const getFun = async () => {
-    let result = await fetch("https://imdb-5vvn.onrender.com/favlist");
+    let result = await fetch("http://localhost:8000/favlist");
     result = await result.json();
     setData(result);
   };
@@ -34,7 +34,9 @@ const FavList = () => {
           return <FavListItem value={value} index={index} setRemoveData={setRemoveData} removeData={removeData}/>;
         })}
       </div>
+
       {/* pagination  */}
+      
       <div
         aria-label="Page navigation example"
         className="select-none absolute bottom-0"

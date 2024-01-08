@@ -1,6 +1,7 @@
-import GenresList from "../../Constant/GenresList";
-import MovieList from "./MovieList";
+import GenresList from "../../Constant/GenresList"; 
+import MovieList from "./MovieList"; 
 
+// GenreMovieList component that maps over GenresList and renders a MovieList for each genre
 const GenreMovieList = () => {
   return (
     <div>
@@ -9,7 +10,7 @@ const GenreMovieList = () => {
           index < 5 && (
             <div key={index} className="py-8 px-8 md:px-16">
               <h1 className="text-white text-[20px] font-bold">{name}</h1>
-              <MovieList id={id} index_={index}/>
+              <MovieList id={id} index_={index}/> 
             </div>
           )
         );
@@ -18,4 +19,4 @@ const GenreMovieList = () => {
   );
 };
 
-export default GenreMovieList;
+export default GenreMovieList; 

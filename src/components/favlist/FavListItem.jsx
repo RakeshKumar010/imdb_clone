@@ -22,8 +22,8 @@ const FavListItem = ({ value, index,setRemoveData,removeData }) => {
                     /10
                   </p>
                   <p className="text-[11px]">
-                    {/* {Math.floor(Number(vote.replace(/,/g, "")) / 1000)}k */}
-                    {vote}
+                    {Math.floor(Number(vote.replace(/,/g, "")) / 1000)}k
+                    {/* {vote} */}
                   </p>
                 </div>
               </div>
@@ -42,7 +42,7 @@ const FavListItem = ({ value, index,setRemoveData,removeData }) => {
                 onClick={async () => {
                   localStorage.removeItem(title);
                   setRemoveData(!removeData)
-                  let result = await fetch("https://imdb-5vvn.onrender.com/favmovie", {
+                  let result = await fetch("http://localhost:8000/favmovie", {
                     method: "delete", // Change method to 'delete'
                     body: JSON.stringify({
                       title: title,

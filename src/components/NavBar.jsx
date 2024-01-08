@@ -23,8 +23,8 @@ const NavBar = () => {
           <img src={Logo} alt="..." className="w-16 h-8 lg:block hidden" />
         </Link>
         <div className="flex items-center lg:gap-1 gap-3">
-          <MdOutlineNotes className="text-white text-2xl" />
-          <p className="font-bold text-white text-sm lg:block hidden">Menu</p>
+          <MdOutlineNotes className="text-gray-500 text-2xl" />
+          <p className="font-bold text-gray-500 text-sm lg:block hidden">Menu</p>
           <Link to={"/"}>
             <img src={Logo} alt="..." className="w-16 h-8 lg:hidden block" />
           </Link>
@@ -82,7 +82,7 @@ const NavBar = () => {
         <div className="flex items-center lg:gap-3 gap-4">
           <Link to={"/favlist"} className="lg:flex gap-1 items-center hidden ">
             <MdBookmarkAdd className="text-white text-2xl" />
-            <p className="text-white font-bold text-sm">Favlist</p>
+            <p className="text-white font-bold text-sm select-none">Favlist</p>
           </Link>
           <IoMdSearch
             className="text-2xl text-white md:hidden block"
@@ -94,18 +94,16 @@ const NavBar = () => {
           <Link to={"/favlist"} className="lg:flex gap-1 items-center ">
             <MdBookmarkAdd className="text-white text-2xl lg:hidden block" />
           </Link>
-          <Link className="text-white font-bold text-sm text-nowrap">
+          <Link className="text-gray-500 font-bold text-sm text-nowrap">
             Sign In
           </Link>
-          <select className="bg-transparent text-white font-bold text-sm w-20 border-0 lg:block hidden ">
+          <select className="bg-transparent text-gray-500 font-bold text-sm w-20 border-0 lg:block hidden ">
             <option className="bg-gray-700" value="">
               EN
             </option>
-            <option className="bg-gray-700" value="EN">
-              English
-            </option>
-            <option className="bg-gray-700" value="EN">
-              Hindi
+
+           <option className="bg-gray-700" value="HI">
+              HI
             </option>
           </select>
           <Link className="text-black font-bold text-sm bg-[#f5c518] p-2 rounded-md lg:hidden md:block">
